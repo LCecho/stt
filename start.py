@@ -173,6 +173,8 @@ def shibie():
                 if not text or re.match(r'^[，。、？‘’“”；：（｛｝【】）:;"\'\s \d`!@#$%^&*()_+=.,?/\\-]*$', text) or len(
                         text) <= 1:
                     continue
+                if cfg.cc is not None:
+                    text=cfg.cc.convert(text)
                 if data_type == 'json':
                     # 原语言字幕
                     raw_subtitles.append(
